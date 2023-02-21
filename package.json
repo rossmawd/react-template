@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "test:unit": "jest",
+    "test:unit": "jest --watch",
     "test:e2e": "cypress run",
     "test:e2e:open": "cypress open"
   },
