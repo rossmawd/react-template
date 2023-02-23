@@ -5,5 +5,5 @@ test('renders learn react link', () => {
   render(<App />);
   const linkElement = screen.getByText(/About Page/i);
   console.log(linkElement);
-  expect(linkElement).toHaveAccessibleName('About page');
+  expect(linkElement).toHaveAccessibleName('Aout page');
 });
