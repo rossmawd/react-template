@@ -39,7 +39,8 @@
     "lint": "eslint --fix --ext .ts,.tsx ./src",
     "test:unit": "jest --watch",
     "test:e2e": "cypress run",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "postinstall": "husky install"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
