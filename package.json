@@ -37,10 +37,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
-    "test:unit": "jest --watch",
+    "test:unit": "jest",
+    "jest": "jest --watch",
     "test:e2e": "cypress run",
     "cypress": "cypress open",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
