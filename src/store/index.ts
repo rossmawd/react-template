@@ -1,12 +1,21 @@
-import { configureStore } from "@reduxjs/toolkit";
-// import rootReducer from "./reducers";
+import { configureStore } from '@reduxjs/toolkit';
 
 const initialState = {};
 
-function rootReducer(state = initialState, action: any) {
+interface ExampleAction {
+  type: string;
+  payload: {
+    // Define the properties and their types for the action payload
+    // Example:
+    userId: string;
+    username: string;
+  };
+}
+
+function rootReducer(state = initialState, action: ExampleAction) {
   switch (action.type) {
-    default:
-      return state;
+  default:
+    return state;
   }
 }
 
