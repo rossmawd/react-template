@@ -1,23 +1,46 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
+import { type AppAction } from "./navCount";
 
-const initialState = {};
+const initialState = {
+  navCount: 0,
+};
 
-interface ExampleAction {
-  type: string;
-  payload: {
-    // Define the properties and their types for the action payload
-    // Example:
-    userId: string;
-    username: string;
-  };
-}
+export type AppState = {
+  navCount: number;
+};
 
-function rootReducer(state = initialState, action: ExampleAction) {
+// interface ExampleAction {
+//   type: string;
+//   payload: {
+//     // Define the properties and their types for the action payload
+//     // Example:
+//     userId: string;
+//     username: string;
+//   };
+// }
+
+// function rootReducer(state = initialState, action: ExampleAction) {
+//   switch (action.type) {
+//   default:
+//     return state;
+//   }
+// }
+
+export const rootReducer = (
+  state: AppState = initialState,
+  action: AppAction
+): AppState => {
   switch (action.type) {
-  default:
-    return state;
+    // existing cases...
+    case "INCREMENT_NAVIGATION_COUNT":
+      return {
+        ...state,
+        navCount: state.navCount + 1,
+      };
+    default:
+      return state;
   }
-}
+};
 
 const store = configureStore({
   reducer: rootReducer,
