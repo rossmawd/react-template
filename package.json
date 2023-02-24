@@ -36,7 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .ts,.tsx ./src",
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx --config .eslintrc ./src",
     "test:unit": "jest",
     "jest": "jest --watch",
     "test:e2e": "cypress run",
@@ -46,12 +46,6 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "npm run lint"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
     ]
   },
   "browserslist": {

@@ -22,6 +22,8 @@ The Cypress tests are not currently run automatically before pushing to a remote
 
 The linting rules are set up in the file ['.eslintrc'](.eslintrc).
 
+You can run linting across all js/ts files using the command `npm run lint`
+
 ## pre-commit hook
 
 Linting is run via a husky pre-commit hook, which attempt to fix any linting error before the commit and prevents the commit if any errors cannot be automatically corrected.
