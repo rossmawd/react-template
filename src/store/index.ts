@@ -9,29 +9,12 @@ export type AppState = {
   navCount: number;
 };
 
-// interface ExampleAction {
-//   type: string;
-//   payload: {
-//     // Define the properties and their types for the action payload
-//     // Example:
-//     userId: string;
-//     username: string;
-//   };
-// }
-
-// function rootReducer(state = initialState, action: ExampleAction) {
-//   switch (action.type) {
-//   default:
-//     return state;
-//   }
-// }
 
 export const rootReducer = (
   state: AppState = initialState,
   action: AppAction
 ): AppState => {
   switch (action.type) {
-    // existing cases...
     case "INCREMENT_NAVIGATION_COUNT":
       return {
         ...state,
