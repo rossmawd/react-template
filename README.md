@@ -1,8 +1,44 @@
-# Getting Started with Create React App
+# React Template App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Aim
+
+This template app is designed to give you everything you need to build a production ready React application. I've set up unit testing (Jest), e2e testing (Cypress), linting (eslint) and added a library for state management (Redux). For more simple apps Redux will probably be overkill, so just remove it and use React's built in useState and useContext hooks.
+
+# Unit Testing - Jest
+
+Run `npm run jest` in your console to run the unit tests in watch mode. You can see a simple example test in [`App.test.tsx`](./src/App.test.tsx). The ['React Testing Library'](https://testing-library.com/docs/react-testing-library/intro/) comes pre-installed, and I highly recommend it.
+
+# e2e Testing - Cypress
+
+For end-to-end testing I've installed Cypress. Please see a simple example in ['app.cy.ts'](./cypress//e2e/app.cy.ts).
+
+You can run the Cypress tests with `npm run cypress`.
+
+The Cypress tests are not currently run automatically before pushing to a remote repo, so make sure to run them yourself before you deploy your app.
+
+# linting
+
+The linting rules are set up in the file ['.eslintrc'](.eslintrc).
+
+## pre-commit hook
+
+Linting is run via a husky pre-commit hook, which attempt to fix any linting error before the commit and prevents the commit if any errors cannot be automatically corrected.
+
+The command for the hook is set up in the [pre-commit](.husky/pre-commit) file in the husky folder. And this runs the ['lint-staged'](https://github.com/okonet/lint-staged) package, which is set up (in package.json) to lint all staged JavaScript and Typescript files in the project.
+
+The [huskyrc](huskyrc) file allows the pre-commit hook to run npx when you commit using VsCode's git tools.
+
+# Pre-push Hook
+
+There is also a pre-push hook set up to run the unit tests before pushing to any remote branch.
+
+If you want the best user experience, commit using the command line instead of VsCode - you'll get pretty colorized unit test output this way.
+
+**NB**: if you are sure you don't need to run your unit tests before pushing, you can always skip this hook by giving the 'no-verify' flag, i.e. `git push --no-verify`
+
+# Available Scripts
 
 In the project directory, you can run:
 
@@ -14,10 +50,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run jest`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Starts the Jest test runner in watch mode (i.e. it re-runs the tests when you make changes to your files)
 
 ### `npm run build`
 

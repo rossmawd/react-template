@@ -1,7 +1,7 @@
 
 
-describe("App", () => {
-  it("loads", () => {
-    cy.visit("/");
+describe('App', () => {
+  it('loads', () => {
+    cy.visit('/');
   });
 });
