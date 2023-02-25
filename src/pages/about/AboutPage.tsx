@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <div>
       <Button onClick={handleClick}>Home Page</Button>
-      <div>{navCount} navigation events</div>
+      <div data-testid="counter">{navCount} navigation events</div>
     </div>
   );
 }

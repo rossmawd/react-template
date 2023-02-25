@@ -13,11 +13,12 @@ export default function HomePage() {
     dispatch(incrementNavigationCount());
     navigate("/about");
   };
+
   return (
     <div>
       <>
         <Button onClick={handleClick}>About page</Button>
-        <div>{navCount} navigation events</div>
+        <div data-testid="counter">{navCount} navigation events</div>
       </>
     </div>
   );
