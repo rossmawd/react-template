@@ -11,7 +11,7 @@ test("renders learn react link", () => {
 test("should increment the counter when the button is clicked", () => {
   render(<App />);
 
-  const button = screen.getByRole("button");
+  const button: HTMLElement = screen.getByRole("button");
 
   fireEvent.click(button);
 

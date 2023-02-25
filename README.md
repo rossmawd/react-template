@@ -8,15 +8,17 @@ This template app is designed to give you everything you need to build a product
 
 # Unit Testing - Jest
 
-Run `npm run jest` in your console to run the unit tests in watch mode. You can see a simple example test in [`App.test.tsx`](./src/App.test.tsx). The ['React Testing Library'](https://testing-library.com/docs/react-testing-library/intro/) comes pre-installed, and I highly recommend it.
+Run `npm run jest` in your console to run the unit tests in watch mode. You can see 2 simple example tests in [`App.test.tsx`](./src/App.test.tsx). The ['React Testing Library'](https://testing-library.com/docs/react-testing-library/intro/) comes pre-installed, and I highly recommend it.
+
+Jest is set up to work with TypeScript via the [ts-jest](https://kulshekhar.github.io/ts-jest/) pre-processor (which allows features such as type checking in your tests). You can see this package has configuration in the `jest.config.js` file (which sets the 'preset' property to `ts-jest`).
 
 # e2e Testing - Cypress
 
-For end-to-end testing I've installed Cypress. Please see a simple example in ['app.cy.ts'](./cypress//e2e/app.cy.ts).
+For end-to-end testing I've installed Cypress. Please see a simple example test in ['app.cy.ts'](./cypress//e2e/app.cy.ts).
 
 You can run the Cypress tests with `npm run cypress`.
 
-The Cypress tests are not currently run automatically before pushing to a remote repo, so make sure to run them yourself before you deploy your app.
+The Cypress tests are not currently running automatically before pushing to a remote repo, so make sure to run them yourself before you deploy your app.
 
 # linting
 
