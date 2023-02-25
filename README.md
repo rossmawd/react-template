@@ -12,6 +12,10 @@ Run `npm run jest` in your console to run the unit tests in watch mode. You can 
 
 Jest is set up to work with TypeScript via the [ts-jest](https://kulshekhar.github.io/ts-jest/) pre-processor (which allows features such as type checking in your tests). You can see this package has configuration in the `jest.config.js` file (which sets the 'preset' property to `ts-jest`).
 
+## Testing with Redux: test-utils.tsx
+
+If you look at [test-utils.tsx](./src/utils/test-utils.tsx), you'll see it exports a version of `@testing-library/react`'s 'render' function, but wrapped in a Provider that gives access to a Redux store. You'll need to use this instead of the normal 'render' for testing any components that interact with the Redux store.
+
 # e2e Testing - Cypress
 
 For end-to-end testing I've installed Cypress. Please see a simple example test in ['app.cy.ts'](./cypress//e2e/app.cy.ts).
@@ -41,6 +45,16 @@ There is also a pre-push hook set up to run the unit tests before pushing to any
 If you want the best user experience, commit using the command line instead of VsCode - you'll get pretty colorized unit test output this way.
 
 **NB**: if you are sure you don't need to run your unit tests before pushing, you can always skip this hook by giving the 'no-verify' flag, i.e. `git push --no-verify`
+
+# Redux store management library
+
+If you look inside the src/store folder you'll see the `index.ts` file, which contains a very simple example use of Redux.
+
+We have a single piece of state `navCount` which represents a counter displayed on the two routes of this sample app (Home and About).
+
+Inside the `rootReducer`, you can see we only have one 'action' defined to change the state ('INCREMENT_NAVIGATION_COUNT), and it simply increments the 'navCount' every time that action is dispatched.
+
+You can see that in both the HomePage and AboutPage components that the `useDispatch` hook is used to dispatch our action, and the `useSelector` hook is used to access our `navCount` piece of state.
 
 # Available Scripts
 
